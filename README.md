@@ -69,13 +69,16 @@
 
 ---
 
-Novel Project Ideas Based on This Research
-Based on the gaps identified in current research and emerging trends, here are 5 high-impact novel project concepts:
+***Novel Project Ideas Based on Research emerging trends 5 high-impact novel project concepts***:
 
-    Multi-Modal Financial Risk Assessment: Combine earnings call audio (speech), transcript text (NLP), and numerical financial data (time series) using a transformer-based fusion model to predict credit rating changes before they occur.
-    Real-time Cross-Lingual ESG Arbitrage: Build a system that processes ESG news in 20+ languages simultaneously, detects sentiment divergences between local and international reporting on the same company, and generates arbitrage signals for sustainable investing.
-    Generative Regulatory Compliance Assistant: Develop a domain-specific LLM (fine-tuned on Basel III, MiFID II, GDPR) that not only answers compliance questions but generates institution-specific policy drafts and automates regulatory gap analysis.
-    Behavioral Biometric NLP for Fraud Prevention: Create a system that analyzes the linguistic patterns (typing speed, word choice, syntax complexity) in how users fill out loan applications or chat with customer service to detect account takeover in real-time.
-    Dynamic Knowledge Graph for Supply Chain Finance: Construct a living knowledge graph that extracts supplier relationships, geopolitical risks, and ESG controversies from global news to predict supply chain disruptions and optimize trade finance decisions.
-
-These projects leverage cutting-edge techniques (transformers, knowledge graphs, multimodal learning) while addressing concrete pain points in modern financial services.
+- Multi-Modal Financial Risk Assessment: Combine earnings call audio (speech), transcript text (NLP), and numerical financial data 
+  (time series) using a transformer-based fusion model to predict credit rating changes before they occur. 
+- Real-time Cross-Lingual ESG Arbitrage: Build a system that processes ESG news in 20+ languages simultaneously 
+  detects sentiment divergences between local and international reporting on the same company, and generates arbitrage signals for sustainable investing. 
+- Generative Regulatory Compliance Assistant: Develop a domain-specific LLM (fine-tuned on Basel III, MiFID II, GDPR)
+  that not only answers compliance questions but generates institution-specific policy drafts and automates  regulatory gap analysis.
+- Behavioral Biometric NLP for Fraud Prevention: Create a system that analyzes the linguistic patterns (typing speed, word choice, syntax complexity)
+  in how users fill out loan applications or chat with customer service to detect account takeover in real-time.
+- Dynamic Knowledge Graph for Supply Chain Finance: Construct a living knowledge graph that extracts supplier relationships,
+  geopolitical risks, and ESG controversies from global news to predict supply chain disruptions and optimize trade finance decisions.
+- Projects leverage cutting-edge techniques (transformers, knowledge graphs, multimodal learning) while addressing concrete pain points in modern financial services.
