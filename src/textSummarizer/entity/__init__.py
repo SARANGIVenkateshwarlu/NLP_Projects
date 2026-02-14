@@ -28,3 +28,12 @@ class ModelTrainerConfig:
     eval_steps: int                  #frm params.yaml
     save_steps: float                 #frm params.yaml
     gradient_accumulation_steps: int  #frm params.yaml
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    data_path: Path
+    model_path: Path
+    tokenizer_path: Path
+    metric_file_name: Path

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Text Summarization Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            display: flex;
+            flex-direction: column;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-4px);
+        }
+
+        .panel h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        textarea {
+            flex: 1;
+            resize: none;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+
+        .output {
+            flex: 1;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            background-color: #f8fafc;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    AI Text Summarization System
+    <div class="subtitle">Enterprise Demo Application</div>
+</header>
+
+<div class="container">
+
+    <div class="panel">
+        <h3>Input Document</h3>
+        <textarea id="inputText" placeholder="Paste your text here for summarization..."></textarea>
+        <button onclick="generate()">Generate Summary</button>
+    </div>
+
+    <div class="panel">
+        <h3>Generated Summary</h3>
+        <div id="outputText" class="output">
+            The summarized content will appear here...
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 AI Text Summarization Demo | Powered by FastAPI
+</footer>
+
+<script>
+async function generate() {
+
+    const inputText = document.getElementById("inputText").value;
+    const outputDiv = document.getElementById("outputText");
+
+    if (!inputText.trim()) {
+        outputDiv.innerText = "Please enter text before generating summary.";
+        return;
+    }
+
+    outputDiv.innerText = "Processing... Please wait.";
+
+    try {
+        const response = await fetch("/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ text: inputText })
+        });
+
+        const data = await response.json();
+        outputDiv.innerText = data.summary || "No response received.";
+
+    } catch (error) {
+        outputDiv.innerText = "Error connecting to server.";
+    }
+}
+</script>
+
+</body>
+</html>
