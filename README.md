@@ -1,3 +1,20 @@
+ <div align="Left">   
+     
+## Project: END to END / NLP & Huggingface - Automated Text Summarization    
+- **Motivation**: Developed an abstractive text summarization system using transformer models to condense dialogues into concise summaries. 
+- Utilized SAMSum dataset (14.7K train, 819 test, 818 validation samples) with multi-turn conversations and human-written summaries. 
+- Analyzed dialogue-summary pairs, tokenized with Pegasus tokenizer (maxlen 1024/128), prepared seq2seq features (input_ids, attention_mask, labels). 
+- Fine-tuned `google/pegasus-cnn_dailymail` using Hugging Face Seq2SeqTrainer with ROUGE evaluation and mixed precision.
+- Implemented inference pipeline with beam search generation for real-time summarization.    
+
+
+| Horizontal Flowchart | Web App |
+|---------------------|-------------------|
+| ![Training Progress](https://github.com/SARANGIVenkateshwarlu/NLP_Projects/blob/14dec43c56896b392152af6279d4a121e4b14d89/Assert/image3_in_1.png) | ![Training Progress](https://github.com/SARANGIVenkateshwarlu/NLP_Projects/blob/1a80e95270beda488db9252d7220b1bd1f1cb545/Assert/FAST%20API_evaluation.png) |
+
+
+
+
 # TextSummarizer USing Huggingface
 
 ### Workflows 
